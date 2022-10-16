@@ -1,13 +1,17 @@
 export default class Haiku {
-  constructor() {
+  constructor(line1, line2, line3) {
+    this.line1 = line1;
+    this.line2 = line2;
+    this.line3 = line3;
+  }
 
+ checker = (L1, L2, L3) => {
+  let ah = false;
+  let vowel = /[aeiouy]/gi;
+  ah = L2.match(vowel); 
+  return ah.length;
   }
 }
 
-function new_count(word) {
-  word = word.toLowerCase();                                     
-  if(word.length <= 3) { return 1; }                             
-    word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');   
-    word = word.replace(/^y/, '');                                 
-    return word.match(/[aeiouy]{1,2}/g).length;                    
-}
+
+
